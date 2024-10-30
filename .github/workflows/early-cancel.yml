@@ -2,7 +2,7 @@ name: Early cancel
 on:
   pull_request:
     branches:
-	  - develop
+      - develop
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -10,9 +10,9 @@ concurrency:
 
 jobs:
   simulate-long-running-job:
-	runs-on: ubuntu-latest
-	steps:
-	  - run: echo "Starting job"
-	  - run: sleep 600
-	  - run: echo "Job finished"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Starting job"
+      - run: sleep 600
+      - run: echo "Job finished"
 
